@@ -1,0 +1,26 @@
+{
+  "name": "elasticsearch-fake-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmmanuelDemey/elasticsearch-fake-data.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmmanuelDemey/elasticsearch-fake-data/issues"
+  },
+  "homepage": "https://github.com/EmmanuelDemey/elasticsearch-fake-data#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
+}
