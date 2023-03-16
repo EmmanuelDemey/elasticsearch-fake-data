@@ -19,6 +19,7 @@ describe("main", () => {
                 unsigned_long: { type: "unsigned_long" },
                 email: { type: "keyword" },
                 name: { type: "text" },
+                geopoint: { type: "geopoint" }
               },
             },
             arrays: {
@@ -34,6 +35,7 @@ describe("main", () => {
                 unsigned_long: { type: "unsigned_long" },
                 email: { type: "keyword" },
                 name: { type: "text" },
+                geopoint: { type: "geopoint" }
               },
             },
             longs: { type: "long" },
@@ -48,6 +50,7 @@ describe("main", () => {
             unsigned_long: { type: "unsigned_long" },
             email: { type: "keyword" },
             name: { type: "text" },
+            geopoint: { type: "geopoint" },
           },
         },
       })
@@ -64,8 +67,12 @@ describe("main", () => {
           scaled_float: expect.any(Number),
           unsigned_long: expect.any(Number),
           integer: expect.any(Number),
-          email: expect.any(String),
+          email: expect.stringContaining("@hotmail.com"),
           name: expect.any(String),
+          geopoint: expect.objectContaining({
+            lat: expect.any(String),
+            lon: expect.any(String),
+          })
         },
         arrays: expect.any(Array),
         longs: expect.any(Array),
@@ -79,8 +86,12 @@ describe("main", () => {
         scaled_float: expect.any(Number),
         unsigned_long: expect.any(Number),
         integer: expect.any(Number),
-        email: expect.any(String),
+        email: expect.stringContaining("@hotmail.com"),
         name: expect.any(String),
+        geopoint: expect.objectContaining({
+          lat: expect.any(String),
+          lon: expect.any(String),
+        })
       },
     ]);
   });

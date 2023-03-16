@@ -31,9 +31,22 @@ const generateData = (mappings) => () => {
       };
     }
 
+    if (["geopoint"].includes(configuration.type)) {
+      return {
+        ...acc,
+        [propertyName]: generateArray(propertyName, () => ({
+          lat: faker.address.latitude(),
+          lon: faker.address.longitude()
+        })),
+      };
+    }
+
+    const mapping = {
+      "email": () => faker.internet.email(undefined, undefined, "hotmail.com")
+    }
     return {
       ...acc,
-      [propertyName]: generateArray(propertyName, faker.datatype.string),
+      [propertyName]: generateArray(propertyName, mapping[propertyName] ?? faker.datatype.string),
     };
   }, {});
 }
