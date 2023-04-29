@@ -42,7 +42,12 @@ const generateData = (mappings) => () => {
     }
 
     const mapping = {
-      "email": () => faker.internet.email(undefined, undefined, "hotmail.com")
+      "email": () => faker.internet.email(undefined, undefined, "hotmail.com"),
+      "sex": () => faker.name.sex(),
+      "sexe": () => faker.name.sex(),
+      "gender": () => faker.name.sex(),
+      "phone": () => faker.phone.number(),
+      "phoneNumber": () => faker.phone.number(),
     }
     return {
       ...acc,
